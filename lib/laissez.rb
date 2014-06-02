@@ -2,7 +2,7 @@ require "laissez/version"
 
 class Module
   def lazy_reader(*syms)
-    syms.each do |sym|
+    syms.map(&:to_s).each do |sym|
       raise NameError.new("invalid attribute name: #{sym}") unless sym =~ /^[_A-Za-z]\w*$/
       class_eval(<<-EOS, __FILE__, __LINE__ + 1)
         def #{sym}(&block)
@@ -16,7 +16,7 @@ class Module
   end
 
   def lazy_writer(*syms)
-    syms.each do |sym|
+    syms.map(&:to_s).each do |sym|
       raise NameError.new("invalid attribute name: #{sym}") unless sym =~ /^[_A-Za-z]\w*$/
       class_eval(<<-EOS, __FILE__, __LINE__ + 1)
         @#{sym} = nil unless defined? @#{sym}
