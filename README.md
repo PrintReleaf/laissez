@@ -59,3 +59,9 @@ Or install it yourself as:
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+### Run the tests
+
+```shell
+$ rake test
+```
+
