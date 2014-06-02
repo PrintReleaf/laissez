@@ -5,7 +5,8 @@ class Module
     syms.each do |sym|
       raise NameError.new("invalid attribute name: #{sym}") unless sym =~ /^[_A-Za-z]\w*$/
       class_eval(<<-EOS, __FILE__, __LINE__ + 1)
-        def #{sym}
+        def #{sym}(&block)
+          return self.#{sym}=(block) if block_given?
           #{sym} = @#{sym}
           #{sym} = #{sym}.call if #{sym}.is_a? Proc
           #{sym}

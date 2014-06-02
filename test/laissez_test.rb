@@ -20,17 +20,20 @@ describe "lazy_reader" do
 end
 
 describe "lazy_accessor" do
-  class Rect
+  class Box
     lazy_accessor :width
     lazy_accessor :height
+    lazy_accessor :length
   end
 
   it "returns the return value of calling the block" do
-    rect = Rect.new
-    rect.width = proc { 1024 }
-    rect.height = lambda { 576 }
-    rect.width.must_equal 1024
-    rect.height.must_equal 576
+    box = Box.new
+    box.width = proc { 1024 }
+    box.height = lambda { 576 }
+    box.length { 2048 }
+    box.width.must_equal 1024
+    box.height.must_equal 576
+    box.length.must_equal 2048
   end
 end
 
