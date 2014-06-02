@@ -2,7 +2,7 @@
 
 Lazy accessors, yo.
 
-Adds `lazy_accessor`, `lazy_reader`, and `lazy_writer` to the Module class. Behaves just like its `attr_*` counterparts, except if the value is a Proc, the return value of calling the proc is cached and returned instead.
+Adds `lazy_accessor`, `lazy_reader`, and `lazy_writer` to the Module class. Behaves just like its `attr_*` counterparts, except if the value is a Proc, the return value of calling the proc is returned instead.
 
 
 ### Example:
@@ -30,9 +30,6 @@ person.name # => "Jean-Ralphio Saperstein"
 - Cheap DSLs
 - Cheap method forwarding
 - Defaults that might be destructive
-
-### What do you mean by `cached`?
-Good ol' vanilla memoization. Caching just sounds cooler.
 
 ### Is this a good idea?
 TBD.
