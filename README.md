@@ -1,6 +1,9 @@
-# Laissez
+# Laissez 
 
 Lazy accessors, yo.
+
+[![Build Status](https://travis-ci.org/PrintReleaf/laissez.png?branch=master)](https://travis-ci.org/PrintReleaf/laissez)
+
 
 Adds `lazy_accessor`, `lazy_reader`, and `lazy_writer` to the Module class. Behaves just like its `attr_*` counterparts, except if the value is a Proc, the return value of calling the proc is returned instead.
 
