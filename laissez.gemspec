@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
   spec.summary       = "Lazy accessors, yo."
   spec.description   = "Adds `lazy_accessor`, `lazy_reader`, and `lazy_writer` to the Module class.
                         Behaves just like its `attr_*` counterparts, except if the value is a Proc,
-                        the return value of calling the proc is cached and returned instead."
+                        the return value of calling the proc is returned instead."
+
   spec.homepage      = "https://github.com/printreleaf/laissez"
   spec.license       = "MIT"
 
